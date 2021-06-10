@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+<!-- app lives in div tag, 
+    core of vue: declaritively render data through the dom -->
+<body>
+<!-- componenet systam an abstraction that allows us to buil large scale apps 
+    composed of small self contained, reusable components -->
+
+    <div id="app">
+        <ol>
+            <!-- instance of the view components -->
+            <todo-item></todo-item>
+        </ol>
+    </div>
+
+    <div id="app-7">
+        <ol>
+          <!--
+            Now we provide each todo-item with the todo object
+            it's representing, so that its content can be dynamic.
+            We also need to provide each component with a "key",
+            which will be explained later.
+          -->
+          <!-- Vue components provide important features 
+            that are not available in plain custom elements -->
+          <todo-item
+            v-for="item in groceryList"
+            v-bind:todo="item"
+            v-bind:key="item.id"
+          ></todo-item>
+        </ol>
+      </div>
+ <script src="index.js"></script>
+</body>
+</html>

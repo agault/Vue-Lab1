@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+<!-- app lives in div tag, 
+    core of vue: declaritively render data through the dom -->
+<body>
+<div id="app">
+    <!-- v preface means a directive, 
+        a special attribute provided by vue
+    apply reactive behaviour through the dom. 
+    seen property in js file-->
+    <span v-if="seen">You can see me</span>
+    <!-- app.seen = false in the console. You should see the message disappear. -->
+</div>
+
+<!-- v-for directive can be used for displaying a list 
+    of items using the data from an Array: -->
+    <div id="app-4">
+        <ol>
+          <li v-for="todo in todos">
+            {{ todo.text }}
+          </li>
+        </ol>
+      </div>
+      
+ <script src="index.js"></script>
+</body>
+</html>

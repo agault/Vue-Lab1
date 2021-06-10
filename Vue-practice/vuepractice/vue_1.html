@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Intro to v-bind</title>
+		<meta charset="UTF-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style>
+			.container{background:#cecece;}
+		</style>
+	</head>
+	<body>
+	
+	
+		<!--
+		//step 1: open console
+		//step 2: inspect "look at me!" HTML
+		//step 3: notice how the class is set for the span to "container"
+		
+		//v-bind attribute you are seeing is called a directive. Directives are 
+    	//prefixed with v- to indicate that they are special attributes provided by Vue
+
+
+		v-bind:html_attribute_key="data_object_property"
+		
+		or 
+		
+		v-bind:html_attribute_key="'string_literal'"
+		
+		EXAMPLES
+		data properties
+			v-bind:style="newStyle"
+			v-bind:alt="newAlt"
+		
+		string literals
+			v-bind:href="'www.vuejs.org'"
+			v-bind:style="'display:block;margin-top:20px;'"
+			v-bind:alt="'New Alt Text'"
+		
+		WARNING: Vue.js doesn't like dynamically setting IDs. Try it!
+		
+		ASYNCHRONOUS LEARNING EXERCISE
+			1. Create an image and set the following attributes with Vue {src, alt, title}
+			2. Augment the span below to include another class called "highlight", which has a yellow border.
+		-->
+
+		<!-- Beauty of components, massage can be used twice but 
+			without the attribute v-bind it wond have changes applied -->
+
+	<div id="app">
+			{{message}}</br>
+		<span v-bind:class="loadClass" v-bind:style="newStyle" v-bind:alt="newAlt">
+			{{message}}
+		</span>
+	</div>
+
+
+	<!-- Create an image tag and bind with vue atts -->
+	<div id="appImage">
+		<img v-bind:alt="newAlt" v-bind:style="newStyle" v-bind:src="newImage">
+	</div>
+
+
+	<script>
+	var app = new Vue({
+		//Bind Vue object to HTML element through query selector
+		el: '#app',
+		data:{
+			message: 'LOOK AT ME',
+			loadClass : 'container',// we bound the class container to the is loadClass
+			newStyle : 'font-size:45px; border:solid 5px yellow;',
+			newAlt : 'dynamically set alt!'
+
+		}
+	});
+	var appImage = new Vue({
+		//Bind Vue object to HTML element through query selector
+		el: '#appImage',
+		data:{
+			newStyle:'height:200px; padding: 10px;',
+			newAlt : 'dynamically set alt!',
+			newImage: 'https://images-na.ssl-images-amazon.com/images/I/61irQrNjgnL._AC_SL1024_.jpg'
+		}
+	});
+	
+	</script>
+	</body>
+</html>
