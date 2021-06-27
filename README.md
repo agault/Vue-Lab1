@@ -1,4 +1,8 @@
-# Vue-Lab1
-index_0 - 3 have been completed, practice with vue.js
+# Official Vue.js Documentation
+Follow along with the [official documentation for Vue.js](https://vuejs.org/v2/guide/)
 
-The v-bind is really awesome. I like the modularity of it it makes more sense.
+## Asynchronous Activities
+Asynchronous activities mean you can complete them at your own pace.
+
+## Practice!
+Use the knowledge you have gained to prototype components for a web-based board game!
